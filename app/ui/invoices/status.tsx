@@ -15,7 +15,11 @@ export default function InvoiceStatus({ status }: { status: string }) {
       {status === 'pending' ? (
         <>
           Pending
-          <ClockIcon className="ml-1 w-4 text-gray-500" />
+          <ClockIcon className={clsx(
+            "ml-1 w-4 text-gray-500", {
+              'border-2 border-red-500': status==='pending', 
+            }
+          )}/>
         </>
       ) : null}
       {status === 'paid' ? (
